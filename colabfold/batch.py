@@ -796,7 +796,7 @@ def get_msa_and_templates(
             query_seqs_unique,
             str(result_dir.joinpath(jobname)),
             use_env,
-            use_templates=True,
+            use_templates=True if custom_template_path is not None else False, # do not create templates if custom templates are provided
             host_url=host_url,
         )
         if custom_template_path is not None:
